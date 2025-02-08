@@ -33,3 +33,11 @@ Additional automated scoring criteria:
 ## Constraints
 - The generated images must not contain explicit, harmful, or inappropriate content.
 - All images must be original and not contain plagiarized elements.
+
+## Example
+
+~~~~~~~
+A serene lake surrounded by lush green pine forests under a vibrant orange and pink sunset sky. In the foreground, there is a wooden pier extending into the lake, with a small lantern glowing warmly. On the lake, a rowboat with two people wearing hats is gently drifting, while a family of ducks swims nearby. In the background, snow-capped mountains are visible, partially shrouded in mist. The scene is reflected on the still water, creating a mirror-like effect. Artistic style: hyper-realistic, with intricate textures on the wood, water ripples, and detailed lighting effects.
+~~~~~~~
+
+![image](https://github.com/user-attachments/assets/cfbe6d46-67d1-4a52-8b15-8c7b46bf31ae)
