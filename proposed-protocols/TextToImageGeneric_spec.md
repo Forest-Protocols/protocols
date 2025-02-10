@@ -18,6 +18,9 @@ Additional automated scoring criteria:
 ### `generateImage()`
 - **Params**:
   - `prompt` (string): Description of the image to be generated. Max 3000 characters.
+  - `format` (ImageFormat) – The desired image format. Allowed values:
+    - `"PNG"`
+    - `"JPEG"`
 
 - **Returns**:
   - `image`: A generated image as a single file.
