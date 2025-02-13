@@ -88,3 +88,21 @@ Centralized private test data evaluation is another approach that has been attem
 Current private validators like SEAL could become part of the Forest Protocols network if they are willing to put collateral behind the trust in their fair evaluations. 
 
 Forest AI combines the approaches of SEAL and Dynabench adding corruption resistance and a funding mechanism for the continuous creation of new private test data by multiple independent parties.  
+
+
+
+# Use Cases
+
+### Machine Translation [Text to Text ]:  
+A text to text problem with multiple correct answers such as translating from English to Korean.  Validators will create specialized test datasets with one English prompt  and 3-5 correct reference translations.  When validators get translated answers from each of the participating miners they will score them based on how close they are to the reference translations using the [BLEU](https://aclanthology.org/P02-1040.pdf) scoring method.  
+	
+
+### Python Code Generation [Text To Text]:   
+This subnet would be the continually evaluated alternative to current standards in academia like MBPP  PAPER     https://paperswithcode.com/sota/code-generation-on-mbpp   https://huggingface.co/datasets/google-research-datasets/mbpp     or APPS https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/c24cd76e1ce41366a4bbe8a49b02a028-Paper-round2.pdf    or HumanEval https://arxiv.org/abs/2107.03374 https://huggingface.co/datasets/openai/openai_humaneval . The current standards have known questions and hence particularly closed source models can pretrain on this test data to overfit their results making the models seem superior while they only overfit this specific testset. 
+Validators in a Text To Code subnet would independently generate their own coding challenges with test cases on how to check for correctness (in python for instance).  The text prompts are sent to the miners (aka AI model providers) whom must return functioning code that is the executed by the validator to check for correctness and CPU efficiency of the solution. While validators might 
+
+### Image Generation [ Text to Image]: 
+While being one of the most common everyday  uses of AI it is also one of the hardest to define a scoring standard for due to the subjectivity of what is the most accurate or most beautiful image.  Here it is important to note that the validators have two scoring mechanism,  one is a boolean vote if the miner(aka AI model provider)  is in compliance with the basic requirements  such as responding promptly with an image, abiding by the defined API  and producing an image which on a very basic level can be considered to depict most of the text prompt.The validators output a scaler value which is designed as a relative score against the other answers provided. In the case of text to image it will be easy for users themselves to test multiple providers since the queries are standardized over all the providers a user can directly ask for the same prompt from all providers (aided by the user interface) and after a few prompts choosing only their favorite providers for the remaining prompts or let the validator ranking guide their choice by default. As previously stated the protocol values users' purchasing decisions higher than validator votes themselves and in the case of text to image this alleviates the issue of ambiguity of evaluation  by the wisdom of the crowd. 
+
+### Future Event Prediction  [ Text to Boolean ]: 
+ Future events prediction has utility in many industries such as insurance, finance, energy markets among others. Each of these specialized prediction markets could become their own subnets. Real world events suit themselves particularly well for decentralized validation as there is little ambiguity of scoring results once the event has happened or time has passed before which the event should have happened.  Each validator independently defines events to be predicted such as will the price of bitcoin be above $100,000 within the next 7 days, OPEC announced a reduction in oil production within the next 30days or will the US Federal Reserve increase interest rates next month.  All events have a boolean outcome with in a specific date and each miner will announce their predictions to each validator who can then score them with accuracy 0 or 1 and average over all event questions. 
