@@ -64,7 +64,20 @@ flowchart TD
 3. Each Provider in a protocol gets tokens proportionally to AI performance score
 ![example_tokenflow](https://github.com/user-attachments/assets/201b3c72-1296-4e00-b1ee-3914ee7f0279)
 
-Above example is simplified for exact details please see the smart contract sourcecode directly. 
+Above example is simplified for illistrative purposes. Protocol administrators can how exactly tokens are distributed over all participants : Validators, Providers and Admins. For exact details see /contracts directory. 
+
+## Validation 
+
+Every Epoch inside each protocol the participating validators score performance of all participating providers.  The scoring process is as follows. 
+
+1. Validators generate new test data locally and keep them secret 
+2. At any random time  within the epoch validators purchase services from each provider  and send test prompts
+3. Providers immediately reply with a signed response to each prompt  
+4. Validators score each response relative to other participating proiders
+5. During Voting Window  Validators hash their score vector and submit it on-chain 
+6. When Reveal Window is opened: Validators reveal raw scores for each of the tests they have performed
+
+
 
 # Motivation
 
