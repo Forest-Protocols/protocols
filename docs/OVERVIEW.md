@@ -77,7 +77,59 @@ Every Epoch inside each protocol the participating validators score performance 
 5. During Voting Window  Validators hash their score vector and submit it on-chain 
 6. When Reveal Window is opened: Validators reveal raw scores for each of the tests they have performed
 
+## Provider Registration Process
 
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 60, 'rankSpacing': 50}}}%%
+flowchart LR
+    subgraph Blockchain[Blockchain]
+        direction TB
+        A[Provider registers with a protocol]:::color2
+        subgraph PaymentGroup[ ]
+            direction LR
+            A1[Pays Protocol Fee]:::color2 
+            A2[Submits Collateral for Stake]:::color2
+        end
+        A --> A1
+        A --> A2
+    end
+
+    A1 --> C
+    A2 --> C
+
+    subgraph Process[Service Validation Process off Chain]
+        direction TB
+        C[Testing]:::colorCDE 
+        D[Engage as Pseudonymous Customers to Validate]:::colorCDE
+        E[Assess the Performance]:::colorCDE
+        H[Randomized Monthly Reassessment]:::color8
+        C --> D
+        D --> E
+        H --> E 
+    end
+
+    subgraph Outcome[Validation Outcome on Chain]
+        direction TB
+        F[Provider Penalized and Deregistered]:::colorFG 
+        G[Provider Successfully Verified & Authorized]:::colorFG 
+    end
+
+    E --|Scores Below Threshold|--> F
+    E --|Scores Satisfactory|--> G
+
+    H --> G
+
+    linkStyle default curve: linear;
+    
+    classDef color2 fill:#FFABAB,stroke:#000,stroke-width:2px;
+    classDef colorCDE fill:#D5AAFF,stroke:#000,stroke-width:2px;
+    classDef colorFG fill:#B9FBC0,stroke:#000,stroke-width:2px;
+    classDef color8 fill:#FFCBCB,stroke:#000,stroke-width:2px;
+    
+    style PaymentGroup fill:none,stroke:none,stroke-width:0px
+
+
+```
 
 # Motivation
 
