@@ -64,7 +64,7 @@ flowchart TD
 3. Each Provider in a protocol gets tokens proportionally to AI performance score
 ![example_tokenflow](https://github.com/user-attachments/assets/201b3c72-1296-4e00-b1ee-3914ee7f0279)
 
-Above example is simplified for illistrative purposes. Protocol administrators can how exactly tokens are distributed over all participants : Validators, Providers and Admins. For exact details see /contracts directory. 
+Above example is simplified for illistrative purposes. Protocol administrators can define how exactly tokens are distributed over all participants : Validators, Providers and Admins. For exact details see /contracts directory. 
 
 ## Validation 
 
