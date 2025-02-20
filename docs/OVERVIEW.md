@@ -131,6 +131,18 @@ flowchart LR
 
 ```
 
+# Attacks 
+
+## Sybil Attack 
+
+Providers way try to cheat the token reward mechanism by creating many fake accounts and buying from themselves cycling the money. While implement multiple sybil detection systems, a sybil attack like this is not immediately harmful for the network for the following reasons :
+  - **A**) Every purchase has a significant network fee that goes to the treasury 
+  - **B**) The network's total value locked (TVL) increases because customers must prepurchase at least a full month and providers can not immediately withdraw. 
+  - **C**)  The customer revenue brought in by one provider does not only give them rewards but any other provider on the same protocol with a high performance score 
+  - **D**) Token rewards have a lockup period 
+
+In order for an attacker to succeed at a sybil attack they would need to dedicate a significant amount of capital to the attack ( minimum staking requirements, fees and pre-payments ) , they must have the capabilities to run a high scoring AI model in their protocol and then they must accept the risk that their rewards and stake can get slashed during the lockup period if they are found to having run a sybil farm. 
+
 # Motivation
 
 ## Mining rewards that follow the market
