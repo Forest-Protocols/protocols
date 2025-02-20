@@ -55,6 +55,14 @@ flowchart TD
   class A,B,D,E actor;
 ```
 
+>**Providers** must stake the token as collateral to each protocol they want to compete in and hence get rewards from
+>
+>**Validators** must stake the token as collateral to each protocol they want to score and hence get rewards from. 
+
+The stake is required to ensure the validator is taking their task seriously and giving the DAO something to slash in defense of network attacks. 
+
+
+
 ## Token Emissions 
 
 
