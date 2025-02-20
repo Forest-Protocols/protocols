@@ -224,3 +224,15 @@ While being one of the most common everyday  uses of AI it is also one of the ha
 
 ### Future Event Prediction  [ Text to Boolean ]: 
  Future events prediction has utility in many industries such as insurance, finance, energy markets among others. Each of these specialized prediction markets could become their own subnets. Real world events suit themselves particularly well for decentralized validation as there is little ambiguity of scoring results once the event has happened or time has passed before which the event should have happened.  Each validator independently defines events to be predicted such as will the price of bitcoin be above $100,000 within the next 7 days, OPEC announced a reduction in oil production within the next 30days or will the US Federal Reserve increase interest rates next month.  All events have a boolean outcome with in a specific date and each miner will announce their predictions to each validator who can then score them with accuracy 0 or 1 and average over all event questions. 
+
+ # Moat 
+
+ ## Strong Network Effects
+ Every provider adds to the network effect of getting more customers into one platform and bringing more services into one platform.  New providers will always prefer to integrate with the platform that has the most users. And customers prefer the platform with the largest offering.  
+
+Providers already have the common vested interest with other providers as they all hold the network token which goes up in price when the network gores.  But additionally Forest AI fosters the network effect by directly rewarding providers if their customers also make purchases with other protocols in the network ( [FIP21](https://github.com/Forest-Protocols/forest-AI/discussions/21) [FIP22](https://github.com/Forest-Protocols/forest-AI/discussions/22) ). 
+ 
+ 
+ 
+
+
