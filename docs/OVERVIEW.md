@@ -175,23 +175,6 @@ Even a large validators of go through a sophisticated attack disadvantaged provi
 
 # Motivation
 
-## Mining rewards that follow the market
-
-Blockchain mining rewards have been rigid historically. Forest AI is introducing a robust system of diverse mining rewards that adjust with the market.  
-
-**1st Gen:** Bitcoin mining is just a competition for who can randomly guess the right numbers to hash together and hence seen as a significant waste of energy. 
-
-**2nd Gen:** Projects like [LivePeer](https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md), [FileCoin](https://filecoin.io/filecoin.pdf) or [Render Network](https://renderfoundation.com/whitepaper) that give mining rewards for workloads that have real world utility, but they define that utility in a narrow way with rigid smart contracts making it hard for the networks to adapt to a changing market. 
-
-**3rd Gen:** Forest AI’s mining rewards are dynamically adjusted to reward mining workloads that have the most utility to the market. Any workload that can be framed as an AI Agent can be proposed and minded in a permissionless manner.
-
-## Deterministic innovation funding  
-Since the majority of mining rewards go to providers who are typically AI startups one could consider the network a form of startup funding. 
-The network invests in innovative AI startups and can collect a return on this investment from the cumulative future customer fees and increased demand for the network token. Token reward are directly linked to new customer revenue coming into the network and validators further direct the rewards to the most innovative providers with the best AI. 
-
-Traditional venture capital (VC) funding entrusted a lump sum of money to a group of people that have gone through an extensive but subjective vetting process. The overhead of traditional funding decision-making is huge not only on the VC side but also on the side of the startup. Founders must dedicate huge amounts of time to outreach, networking events and relationship building to get invited to a VC meeting, and they may need hundreds of such meetings over the course of months as each has <1% probability of success. And once a funding decision has been made it is followed by even more overhead with legal contracting. 
-
-The Forest AI smart contracts can make funding decisions deterministically leaning on the self-motivated signals coming from customers and validators. Funding requires no political connections or networking. An AI PhD student living in a smaller country without a significant VC network can simply register their model to a protocol where they know it will win the highest scores, and they will immediately get funding to further its development. 
 
 ## Addressing Industry Wide Overfitting
  
@@ -207,6 +190,34 @@ Current private validators like SEAL could become part of the Forest Protocols n
 
 Forest AI combines the approaches of SEAL and Dynabench adding corruption resistance and a funding mechanism for the continuous creation of new private test data by multiple independent parties.  
 
+## Fair Competition Brings Innovation
+Capitalism incentivizes technology companies to play nice on the surface to attract customers while covertly being  anti-compeditive with tactics like technology lock-in. Customers know what's happening and they hate it. The issue can be even worse with vendors one has worked with for many years, because the vendor knows the customer would need to spend millions in development costs to migrate to another solution; they can continually increase the price going significantly above the average market price. 
+
+Forest AI provides an incentive system that rewards companies who do not partake in this anti-compeditive tactic. Validators are not only scoring providers for performance but also for cross compatibility, in most protocols this is a side effect of needing to be compatible with the API being tested if they aren't compatible it immediately results in a zero score. If a customer wants to try out a new provider within the same protocol they can continue using their same code simply changing connection strings potentially saving millions in development cost. 
+
+Fair competition also naturally brings prices down. If the largest providers can’t lock-in their customers they need to keep reasonable prices and then smaller providers will need to bring prices down even further to compete. Our network even enables protocol administrators to directly link the token rewards to performance score per dollar. 
+
+
+
+
+## Deterministic innovation funding  
+Since the majority of mining rewards go to providers who are typically AI startups one could consider the network a form of startup funding. 
+The network invests in innovative AI startups and can collect a return on this investment from the cumulative future customer fees and increased demand for the network token. Token reward are directly linked to new customer revenue coming into the network and validators further direct the rewards to the most innovative providers with the best AI. 
+
+Traditional venture capital (VC) funding entrusted a lump sum of money to a group of people that have gone through an extensive but subjective vetting process. The overhead of traditional funding decision-making is huge not only on the VC side but also on the side of the startup. Founders must dedicate huge amounts of time to outreach, networking events and relationship building to get invited to a VC meeting, and they may need hundreds of such meetings over the course of months as each has <1% probability of success. And once a funding decision has been made it is followed by even more overhead with legal contracting. 
+
+The Forest AI smart contracts can make funding decisions deterministically leaning on the self-motivated signals coming from customers and validators. Funding requires no political connections or networking. An AI PhD student living in a smaller country without a significant VC network can simply register their model to a protocol where they know it will win the highest scores, and they will immediately get funding to further its development. 
+
+
+## Mining rewards that follow the market
+
+Blockchain mining rewards have been rigid historically. Forest AI is introducing a novel system of diverse mining rewards that adjust with the market.  
+
+**1st Gen:** Bitcoin mining is just a competition for who can randomly guess the right numbers to hash together and hence seen as a significant waste of energy. 
+
+**2nd Gen:** Projects like [LivePeer](https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md), [FileCoin](https://filecoin.io/filecoin.pdf) or [Render Network](https://renderfoundation.com/whitepaper) that give mining rewards for workloads that have real world utility, but they define that utility in a narrow way with rigid smart contracts making it hard for the networks to adapt to a changing market. 
+
+**3rd Gen:** Forest AI’s mining rewards are dynamically adjusted to reward mining workloads that have the most utility to the market. Any workload that can be framed as an AI Agent can be proposed and minded in a permissionless manner.
 
 
 # Use Cases
