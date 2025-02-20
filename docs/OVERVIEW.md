@@ -135,13 +135,35 @@ flowchart LR
 
 ## Sybil Attack 
 
-Providers way try to cheat the token reward mechanism by creating many fake accounts and buying from themselves cycling the money. While implement multiple sybil detection systems, a sybil attack like this is not immediately harmful for the network for the following reasons :
+Providers way try to cheat the token reward mechanism by creating many fake accounts and buying from themselves cycling the money. While implement multiple sybil detection systems, a sybil attack like this is not immediately harmful for the network for the following reasons:
+
   - **A**) Every purchase has a significant network fee that goes to the treasury 
   - **B**) The network's total value locked (TVL) increases because customers must prepurchase at least a full month and providers can not immediately withdraw. 
-  - **C**)  The customer revenue brought in by one provider does not only give them rewards but any other provider on the same protocol with a high performance score 
+  - **C**)  The customer revenue brought in by one provider does not only give them rewards but also other provider on the same protocol with a high performance score 
   - **D**) Token rewards have a lockup period 
 
 In order for an attacker to succeed at a sybil attack they would need to dedicate a significant amount of capital to the attack ( minimum staking requirements, fees and pre-payments ) , they must have the capabilities to run a high scoring AI model in their protocol and then they must accept the risk that their rewards and stake can get slashed during the lockup period if they are found to having run a sybil farm. 
+
+Sybil detection methods may include: 
+- [FIP21](https://github.com/Forest-Protocols/forest-AI/discussions/21) Shannon entropy over purchase vector
+- [FIP24](https://github.com/Forest-Protocols/forest-AI/discussions/24) Off-chain verifiable identifiers 
+- [FIP27](https://github.com/Forest-Protocols/forest-AI/discussions/27) Proof of B2B transaction and new KYB onboarding 
+- [FIP28](https://github.com/Forest-Protocols/forest-AI/discussions/28) chain analysis clique detection
+
+## Validator Vote Copying
+Validators are an important part of the decentralized system and hence get rewarded in emissions. Some might try to game the system to get emissions without actually doing the work of evaluating results (like creating new test data) but instead simply waiting for other validators to do this work and then copying their vote vector.   
+We mitigate this issue by Commit-Reveal: All validators must hash commit their vote vector prior to the commit deadline. And then after the reveal deadline all validators publish the original full vote vector which must match their hash.  It is computationally infeasible to reverse the hashed vector so the only way to get validation rewards is by actually doing the work. 
+
+## Validator-Provider Collusion 
+Fundamental to our contribution to the AI industry are robust trustworthy performance scores. Additionally, an actor or group controlling both a validator and a provider may attempt to extract unfair token rewards by scoring themselves unfairly.  In prior Ai Crypto projects this kind of self-dealing was rampant and made it unattractive for fair players to compete. 
+
+We mitigate this issue by requiring all validators to keep a publically auditable log of every score they have given for every prompt to every provider. If unfair scoring of one provider is suspected any token holder can request an audit and a DAO vote to slash the validator's collateral and simultaneously rendering the validators votes ineffective. 
+The rules on how a validator should score providers is defined by the protocol administrator hence also the auditing and slashing rules are defined by them. The vote may be a vote by a panel of experts over [Q](http://q.org/), a full public token holder snapshot or a combination of both. 
+
+Due to the decentralized nature of our AI performance evaluation it is easily visible if one validator unfairly favors one provider due to their scores being a statistical outlier versus the remaining validators. Knowing that naive collusion is easily visible will stop most people from taking the next step as they know it will take significant effort to hide the collusion and not get their stake slashed. Furthermore, the unfairly elevated score will not influence significantly customers who can easily compare providers themselves. When there is a mismatch between the provider with the best score and the provider with the most customers it might get investigated. 
+Even a large validators of go through a sophisticated attack disadvantaged providers will notice it and trigger an audit. 
+
+ 
 
 # Motivation
 
@@ -172,7 +194,7 @@ Public benchmark test data sets make AI model performance comparable.  But this 
 For open source models [Dynabench](https://arxiv.org/abs/2104.14337) attempts to solve the problem of overfitting on test datasets with a community of humans intentionally creating new test data designed to be hard for models. But the Dynabench only works with open source models. Additionally, Dynabench has not seen significant adoption even after being managed by mlCommons, we believe this lack of traction is due to a lack of incentives for evaluators or AI model owners to participate. Forest Protocols’ aims to properly incentivize both AI model owners and those that evaluate them for sustainable long term adoption. 
 
 
-Centralized private test data evaluation is another approach that has been attempted to resolve the problem of AI companies gaming benchmark results. One currently active private evaluator is the [SEAL](https://scale.com/leaderboard) LLM Leaderboards by Safety, Evaluations, and Alignment Lab (SEAL) at Scale.ai.  Private test sets are a fundamental part of the strategy at Forest Protocols but one individual centralized evaluator must be trusted to not be paid off to favor one AI model company over another.  Forest protocol enhances resilience by requiring all subnets to have multiple independent validators each of which having economic collateral that can get slashed if a public audit of their votes and test data reveals that they were clearly biased towards one model.  
+Centralized private test data evaluation is another approach that has been attempted to resolve the problem of AI companies gaming benchmark results. One currently active private evaluator is the [SEAL](https://scale.com/leaderboard) LLM Leaderboards by [Scale.ai](https://scale.com/).  Private test sets are a fundamental part of the strategy at Forest Protocols but one individual centralized evaluator must be trusted to not be paid off to favor one AI model company over another.  Forest protocol enhances resilience by requiring all subnets to have multiple independent validators each of which having economic collateral that can get slashed if a public audit of their votes and test data reveals that they were clearly biased towards one model.  
 Current private validators like SEAL could become part of the Forest Protocols network if they are willing to put collateral behind the trust in their fair evaluations. 
 
 Forest AI combines the approaches of SEAL and Dynabench adding corruption resistance and a funding mechanism for the continuous creation of new private test data by multiple independent parties.  
@@ -186,7 +208,7 @@ A text to text problem with multiple correct answers such as translating from En
 	
 
 ### Python Code Generation [Text To Text]:   
-This subnet would be the continually evaluated alternative to current standards in academia like MBPP  PAPER     https://paperswithcode.com/sota/code-generation-on-mbpp   https://huggingface.co/datasets/google-research-datasets/mbpp     or APPS https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/c24cd76e1ce41366a4bbe8a49b02a028-Paper-round2.pdf    or HumanEval https://arxiv.org/abs/2107.03374 https://huggingface.co/datasets/openai/openai_humaneval . The current standards have known questions and hence particularly closed source models can pretrain on this test data to overfit their results making the models seem superior while they only overfit this specific testset. 
+This subnet would be the continually evaluated alternative to current standards in academia like MBPP[[1]](https://paperswithcode.com/sota/code-generation-on-mbpp)[[2]](https://huggingface.co/datasets/google-research-datasets/mbpp) or [APPS](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/c24cd76e1ce41366a4bbe8a49b02a028-Paper-round2.pdf)    or HumanEval [[1]](https://arxiv.org/abs/2107.03374)[[2]](https://huggingface.co/datasets/openai/openai_humaneval). The current standards have known questions and hence particularly closed source models can pretrain on this test data to overfit their results making the models seem superior while they only overfit this specific testset. 
 Validators in a Text To Code subnet would independently generate their own coding challenges with test cases on how to check for correctness (in python for instance).  The text prompts are sent to the miners (aka AI model providers) whom must return functioning code that is the executed by the validator to check for correctness and CPU efficiency of the solution. While validators might 
 
 ### Image Generation [ Text to Image]: 
